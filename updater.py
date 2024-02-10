@@ -67,11 +67,11 @@ def update_files(extract_path):
 def main():
     
     current_version = "v0.1.0"
-    latest_version = check_for_updates(current_version, "panoschatzileontiadis", "Test_repo")
+    latest_version = check_for_updates(current_version, "panoschatzileontiadis", "Updating")
 
     if latest_version and is_update_available(current_version, latest_version):
         print("Update available. Downloading...")
-        download_update("Panos1990sonaP", "Test_repo")
+        download_update("panoschatzileontiadis", "Updating")
         print("Update complete. Please restart the application.")
     else:
         print("Your application is up to date.")
