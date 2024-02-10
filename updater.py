@@ -8,6 +8,7 @@ import shutil
 
 def check_for_updates(current_version, repo_owner, repo_name):
     releases_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
+    print(releases_url)
     try:
         response = requests.get(releases_url)
         release_info = response.json()

@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 import time
 from webdriver_manager.chrome import ChromeDriverManager
+import updater
 
 def service_and_options(headless = False):
     option = webdriver.ChromeOptions()
@@ -27,3 +28,40 @@ def log_in_function(username, password, driver):
         driver.implicitly_wait(10)
     except:
         pass
+    
+def main():
+    
+    running = True
+    
+    while running:
+        print("What to do?")
+        print("\n1. Open the webpage \n2. Update\n3. Exit")
+        
+        decision = input("\nSelect 1, 2 or 3: ")
+        
+        if decision == "1":
+            
+            driver = service_and_options()
+    
+            url = "https://www.google.com"
+            
+            driver.get(url)
+            
+            for i in range(10):
+                time.sleep(1)
+                print(10-i)
+        
+        elif decision == "2":
+            
+            updater.main()
+        
+        elif decision == "3":
+            running = False
+        
+        else:
+            print("Select 1, 2 or 3 please")
+            continue
+    
+        
+        
+main()
